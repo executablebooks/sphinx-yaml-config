@@ -1,0 +1,12 @@
+#######################################################################################
+# Test config values
+project: Sphinx YAML Metadata
+author: Chris Holdgraf
+description: >- # this means to ignore newlines until "baseurl:"
+  A yaml configuration extension
+
+# Navigate to https://analytics.google.com, add a new property for your jupyter book and copy the tracking id here.
+google_analytics:
+  mytrackingcode: I don't know!
+
+

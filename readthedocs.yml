@@ -1,4 +1,4 @@
-name: sphinx-copybutton
+name: sphinx-yaml-metadata
 type: sphinx
 requirements_file: doc/requirements.txt
 python:

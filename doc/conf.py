@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Sphinx Copybutton'
+project = 'THISSHOULDBEREPLACED'
 copyright = '2018, Chris Holdgraf'
 author = 'Chris Holdgraf'
 
@@ -38,7 +38,7 @@ release = ''
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx_copybutton']
+extensions = ['sphinx_yaml_metadata']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -97,12 +97,8 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
-# CopyButton configuration
-copybutton_prompt_text = ">>> "
-# Switches for testing but shouldn't be activated in the live docs
-# copybutton_only_copy_prompt_lines = False
-# copybutton_remove_prompts = False
-# copybutton_image_path = "test/TEST_COPYBUTTON.png"
+# Yaml Config configuration
+yaml_config_path = "./config.yml"
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
