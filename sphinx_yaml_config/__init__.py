@@ -3,11 +3,12 @@ from pathlib import Path
 
 __version__ = "0.0.1dev0"
 
-from ruamel.yaml import YAML
+from yaml import safe_load
 
-def add_yaml_config(app):
+def add_yaml_config(app, config):
     """Load all of the key/vals in a config file into the HTML page context"""
     path_yaml = app.config['yaml_config_path']
+
     # If no path is given we'll just skip
     if len(path_yaml) == 0:
         return
@@ -16,8 +17,7 @@ def add_yaml_config(app):
     path_yaml = Path(path_yaml)
     if not path_yaml.exists():
         raise ValueError(f"Could not find YAML configuration file at path {path_yaml}")
-    yaml = YAML()
-    yaml_config = yaml.load(path_yaml)
+    yaml_config = safe_load(path_yaml.open())
     for key, val in yaml_config.items():
         app.config[key] = val
 
@@ -26,7 +26,7 @@ def setup(app):
     app.add_config_value("yaml_config_path", "", "html")
 
     # Add configuration value to the template
-    app.connect('builder-inited', add_yaml_config)
+    app.connect('config-inited', add_yaml_config)
 
     return {"version": __version__,
             "parallel_read_safe": True,

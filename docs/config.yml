@@ -9,4 +9,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 google_analytics:
   mytrackingcode: I don't know!
 
+extensions:
+  - myst_parser
+  - sphinx_copybutton
 
+html_theme: sphinx_book_theme
